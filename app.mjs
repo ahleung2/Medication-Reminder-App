@@ -6,6 +6,8 @@ const app = express()
 
 app.use(router)
 
+// serve static page
+app.use(express.static("./public"))
 
 
 app.listen(PORT, () => console.log(`Running on port ${PORT}...`))
