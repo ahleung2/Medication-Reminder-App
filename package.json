@@ -1,0 +1,11 @@
+{
+  "name": "medication-reminder-app",
+  "version": "1.0.0",
+  "description": "A web app for tracking medication and setting refill reminders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremiah Asala, Aaron Leung",
+  "license": "MIT"
+}
