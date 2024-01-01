@@ -6,13 +6,54 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background: url("../images/medical_background_3.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 8%;
+  width: 100%;
+
+  border-bottom: 1px solid white;
+}
+
+.navbar-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-items > a {
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 20px;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.menu > a {
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 20px;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92%;
 }
 
 .wrapper {
