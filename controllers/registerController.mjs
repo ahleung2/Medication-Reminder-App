@@ -1,4 +1,4 @@
-import mongoDB from "../db/MyDB.mjs"
+import mongoDB from "./../db/MyDB.mjs"
 
 const registerUser = async (req, res) => {
     const inputUser = req.body;

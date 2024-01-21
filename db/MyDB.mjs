@@ -5,9 +5,9 @@ dotenv.config();
 function MyMongoDB() {
   const myDB = {};
   const connectionString = process.env.URI;
-  const DB_NAME = "medication_reminder";
-  const USER_COLLECTION = "Users";
-  console.log("Connection String:", connectionString);
+  const DB_NAME = "Medication-Reminder";
+  const USER_COLLECTION = "users";
+
   // function to authenticate users
   myDB.authenticate = async (inputData) => {
     let client;

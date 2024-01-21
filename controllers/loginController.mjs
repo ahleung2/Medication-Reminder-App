@@ -1,4 +1,4 @@
-import mongoDB from "../db/MyDB.mjs"
+import mongoDB from "./../db/MyDB.mjs"
 
 // controller functions to get requested data from db
 const userLogin = async (req, res) => {

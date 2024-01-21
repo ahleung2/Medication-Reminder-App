@@ -1,36 +1,45 @@
-// -- No longer require --> updated to registerLogin.js
-// store reference into constant variable
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const userFirstName = document.getElementById("firstName");
-const userLastName = document.getElementById("lastName");
-const registerButton = document.getElementById("register-btn");
-const userError = document.getElementById("userError");
-const passwordError = document.getElementById("passwordError");
+function Register() {
+  const userFirstname = document.getElementById("firstname");
+  const userLastname = document.getElementById("lastname");
+  const userEmail = document.getElementById("email");
+  const userPassword = document.getElementById("password");
+  const regBtn = document.getElementById("registerBtn");
 
-registerButton.onclick = async function test() {
-  const data = {
-    firstName: userFirstName.value,
-    lastName: userLastName.value,
-    email: email.value,
-    password: password.value,
-  };
+  regBtn.addEventListener("click", async (evt) => {
+    evt.preventDefault();
+    let data = {
+      firstname: userFirstname.value,
+      lastname: userLastname.value,
+      email: userEmail.value,
+      password: userPassword.value,
+    };
 
-  console.log(firstName, userFirstName.value);
-  // input validation
-  if (!username.value) {
-    // return error message
-    userError.innerHTML = "Please fill in field!";
-  } else if (!password.value) {
-    // input username by no password
-    passwordError.innerHTML = "Please fill in field!";
-  } else {
-    let userData = await fetch("/register", {
+    const headers = new Headers({ "Content-Type": "application/json" });
+
+    const opts = {
       method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers,
       body: JSON.stringify(data),
-    });
-  }
-};
+    };
+
+    try {
+      let res = await fetch("/register", opts);
+      let resUser = await res.json();
+
+      if (resUser.success) {
+        alert(`registration successful`);
+        try {
+          window.location.href = "sign-in";
+        } catch (err) {
+          console.log("error navigating to sign-in page", err);
+        }
+      } else {
+        alert(`Error: ${resUser.msg}`);
+      }
+    } catch (err) {
+      alert(`Error: ${err}`);
+    }
+  });
+}
+
+Register();
